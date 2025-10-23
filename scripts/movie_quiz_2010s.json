@@ -1,0 +1,108 @@
+{
+    "title": "Фільми 2010-х: Кіновариво",
+    "type": "movie",
+    "description": "Квіз про найяскравіші фільми 2010-х років. Вгадай акторів, сюжети та рекорди десятиліття.",
+    "questions": [
+      {
+        "text": "Який супергеройський фільм 2019 року тимчасово побив рекорд касових зборів?",
+        "options": ["Avengers: Endgame", "Spider-Man: Far From Home", "Black Panther"],
+        "correct": "А"
+      },
+      {
+        "text": "У якому фільмі Pixar 2017 року дією ставилась у Мексиці?",
+        "options": ["Coco", "Inside Out", "Brave"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка стрічка 2015 року відзначалась як один з найбільших блокбастерів і похідною MCU?",
+        "options": ["Ant-Man", "Avengers: Age of Ultron", "Captain America: Civil War"],
+        "correct": "Б"
+      },
+      {
+        "text": "Який фільм 2014 року про Асоціацію мав назву ‘The Book Thief’?",
+        "options": ["The Book Thief", "Interstellar", "Guardians of the Galaxy"],
+        "correct": "А"
+      },
+      {
+        "text": "Який актор зіграв головну роль у фільмі «Inception» (2010)?",
+        "options": ["Leonardo DiCaprio", "Tom Hardy", "Joseph Gordon-Levitt"],
+        "correct": "А"
+      },
+      {
+        "text": "У якому фільмі 2013 року група людей здійснює «сніданок» і зустріч після пробудження?",
+        "options": ["The W‐Hole", "The Hunger Games: Catching Fire", "American Hustle"],
+        "correct": "Б"
+      },
+      {
+        "text": "Який фільм 2016 року здобув премію «Оскар» за найкращий фільм?",
+        "options": ["La La Land", "Moonlight", "The Revenant"],
+        "correct": "Б"
+      },
+      {
+        "text": "Який фільм 2012 року запустив серію тематичну за грою Assassin’s Creed?",
+        "options": ["Assassin’s Creed", "Tomb Raider", "Prince of Persia"],
+        "correct": "А"
+      },
+      {
+        "text": "Який фільм 2018 року отримав «Оскар» за найкращий фільм і був режисером Пон Чжун-хо?",
+        "options": ["Parasite", "Roma", "The Favourite"],
+        "correct": "А"
+      },
+      {
+        "text": "Який фільм 2011 року став початком приходу Стівена Степенаївура?",
+        "options": ["Drive", "The Tree of Life", "Hugo"],
+        "correct": "В"
+      },
+      {
+        "text": "Який фільм 2017 року був першою частиною «Дюн», створеною режисером Дені Вільньов?",
+        "options": ["Dune", "Blade Runner 2049", "Arrival"],
+        "correct": "А"
+      },
+      {
+        "text": "Який фільм 2013 року має назву із числами і є частиною серії «Fast & Furious»?",
+        "options": ["Fast & Furious 6", "Fast & Furious 7", "Fast & Furious 5"],
+        "correct": "А"
+      },
+      {
+        "text": "У якому фільмі 2010-х головну героїню звати Харлі Квінн?",
+        "options": ["Suicide Squad", "Wonder Woman", "Birds of Prey"],
+        "correct": "А"
+      },
+      {
+        "text": "Який режисер створив фільм «Inception»?",
+        "options": ["Christopher Nolan", "Quentin Tarantino", "Denis Villeneuve"],
+        "correct": "А"
+      },
+      {
+        "text": "У фільмі 2019 року «Joker» головну роль зіграв актор?",
+        "options": ["Joaquin Phoenix", "Brad Pitt", "Leonardo DiCaprio"],
+        "correct": "А"
+      },
+      {
+        "text": "Який фільм 2014 року був британською соціальною драмою?",
+        "options": ["The Imitation Game", "Selma", "Interstellar"],
+        "correct": "А"
+      },
+      {
+        "text": "У фільмі «Mad Max: Fury Road» (2015) режисер?",
+        "options": ["George Miller", "James Cameron", "Quentin Tarantino"],
+        "correct": "А"
+      },
+      {
+        "text": "Який фільм 2012 року розповідає про боротьбу роботів та останню надію людства на марсі?",
+        "options": ["The Martian", "Edge of Tomorrow", "Pacific Rim"],
+        "correct": "Б"
+      },
+      {
+        "text": "Який фільм 2015 року по всій планеті заробив більш ніж 1 млрд доларів і належить до серії Marvel?",
+        "options": ["Avengers: Age of Ultron", "Avengers: Infinity War", "Avengers: Endgame"],
+        "correct": "В"
+      },
+      {
+        "text": "У який фільм 2018-го входить діалог «Iʼm gonna make him an offer he canʼt refuse»? (помилка у стилі гри)",
+        "options": ["A Star Is Born", "The Favourite", "Molly’s Game"],
+        "correct": "В"
+      }
+    ]
+  }
+  

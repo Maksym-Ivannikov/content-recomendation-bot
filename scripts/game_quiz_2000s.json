@@ -1,0 +1,108 @@
+{
+    "title": "Ігри 2000-х",
+    "type": "game",
+    "description": "Квіз про культові відеоігри 2000-х років — від GTA до Half-Life, Doom та Mass Effect.",
+    "questions": [
+      {
+        "text": "У якій грі головного героя звати Карл Джонсон (СіДжей)?",
+        "options": ["GTA: San Andreas", "Mafia: The City of Lost Heaven", "Half-Life 2"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка гра стала першою частиною серії Assassin’s Creed?",
+        "options": ["Assassin’s Creed II", "Assassin’s Creed", "Assassin’s Creed: Brotherhood"],
+        "correct": "Б"
+      },
+      {
+        "text": "Як звати головного героя гри Half-Life?",
+        "options": ["Гордон Фрімен", "Алекс Мерсер", "Макс Пейн"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі з’явився персонаж Master Chief?",
+        "options": ["Halo: Combat Evolved", "Call of Duty", "Crysis"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка гра вперше ввела систему діалогів з вибором відповіді?",
+        "options": ["Mass Effect", "The Witcher", "Dragon Age: Origins"],
+        "correct": "А"
+      },
+      {
+        "text": "Хто є головним героєм гри Max Payne?",
+        "options": ["Поліцейський, що мститься за родину", "Військовий на завданні", "Науковець у лабораторії"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі треба боротися з прибульцями у місті City 17?",
+        "options": ["Half-Life 2", "Crysis", "FEAR"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка гра зробила відомим персонажа Лару Крофт у 2000-х?",
+        "options": ["Tomb Raider: Legend", "Uncharted", "Prince of Persia"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі головний герой отримує костюм нанотехнологій?",
+        "options": ["Crysis", "Far Cry", "Deus Ex"],
+        "correct": "А"
+      },
+      {
+        "text": "Як звати головного героя серії God of War?",
+        "options": ["Кратос", "Атрей", "Зевс"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі треба боротися з демонічними ворогами у пеклі?",
+        "options": ["Doom 3", "Resident Evil 4", "Dead Space"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка гра 2007 року починалася словами «Would you kindly…»?",
+        "options": ["BioShock", "Portal", "Prey"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі можна було використовувати портал-пістолет для вирішення головоломок?",
+        "options": ["Portal", "Half-Life 2", "Prey"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі головний герой — асасин на ім’я Альтаїр?",
+        "options": ["Assassin’s Creed", "Assassin’s Creed II", "Prince of Persia"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка гра починається з аварії літака в океані?",
+        "options": ["BioShock", "Far Cry", "The Longest Journey"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі можна керувати автомобілем у відкритому світі з видом від третьої особи?",
+        "options": ["GTA: Vice City", "Hitman: Blood Money", "Just Cause"],
+        "correct": "А"
+      },
+      {
+        "text": "Який головний герой має ім’я Ніко Беллік?",
+        "options": ["GTA IV", "GTA: San Andreas", "Mafia II"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка гра отримала нагороду Game of the Year у 2009 році?",
+        "options": ["Uncharted 2: Among Thieves", "Batman: Arkham Asylum", "Modern Warfare 2"],
+        "correct": "А"
+      },
+      {
+        "text": "Яка гра 2008 року дозволяла паркур у стародавньому місті Персії?",
+        "options": ["Prince of Persia (2008)", "Assassin’s Creed", "God of War II"],
+        "correct": "А"
+      },
+      {
+        "text": "У якій грі можна було керувати кораблем Normandy?",
+        "options": ["Mass Effect", "StarCraft II", "Deus Ex"],
+        "correct": "А"
+      }
+    ]
+  }
+  
