@@ -1,1 +1,1 @@
-worker: bash -c "source /app/.venv/bin/activate && python app.main.py"
+worker: /app/.venv/bin/python -m app.main
