@@ -69,19 +69,41 @@ async def rec_save(message: Message, state: FSMContext):
     await state.clear()
 
 
+from aiogram import Router, F
+from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
+from app.db import async_session
+from app.repositories import list_recommendations
+
+router = Router()
+
+# --- показати вибір категорії
 @router.message(F.text == "/get_recs")
-async def list_recs_entry(message: Message):
-    # Для спрощення — фільм за замовчуванням
-    type_ = "movie"
+async def choose_rec_category(message: Message):
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="🎬 Фільми", callback_data="recs:movie")],
+        [InlineKeyboardButton(text="📺 Серіали", callback_data="recs:series")],
+        [InlineKeyboardButton(text="📚 Книги", callback_data="recs:book")],
+        [InlineKeyboardButton(text="🎮 Ігри", callback_data="recs:game")],
+    ])
+    await message.answer("Оберіть категорію рекомендацій:", reply_markup=kb)
+
+
+# --- показати список рекомендацій по обраній категорії
+@router.callback_query(F.data.startswith("recs:"))
+async def list_recs_by_category(cb: CallbackQuery):
+    type_ = cb.data.split(":")[1]
     async with async_session() as db:
         items = await list_recommendations(db, type_=type_, limit=5)
 
+    icons = {"movie": "🎬", "series": "📺", "book": "📚", "game": "🎮"}
+    icon = icons.get(type_, "⭐️")
+
     if not items:
-        await message.answer("Поки що немає рекомендацій у цій категорії.")
+        await cb.message.edit_text(f"Поки що немає рекомендацій у цій категорії {icon}.")
         return
 
-    text = "Останні рекомендації (🎬 Фільми):\n\n"
+    text = f"Останні рекомендації ({icon}):\n\n"
     for r in items:
-        text += f"• {r.title}\n  👤 @{r.username}\n  💬 {r.description}\n\n"
+        text += f"• <b>{r.title}</b>\n  👤 @{r.username or 'anon'}\n  💬 {r.description}\n\n"
 
-    await message.answer(text)
+    await cb.message.edit_text(text, parse_mode="HTML")
