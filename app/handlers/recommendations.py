@@ -1,14 +1,18 @@
 from aiogram import Router, F
-from aiogram.types import Message, CallbackQuery
+from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.fsm.context import FSMContext
+
 from app.fsm.states import CreateRec
 from app.keyboards import rec_type_kb
-from app.config import settings
 from app.db import async_session
 from app.repositories import add_recommendation, list_recommendations, upsert_user
 
 router = Router()
 
+
+# =========================
+#   СТВОРЕННЯ РЕКОМЕНДАЦІЙ
+# =========================
 
 @router.message(F.text == "/create_rec")
 async def create_rec_entry(message: Message, state: FSMContext):
@@ -41,7 +45,7 @@ async def rec_chosen_type(cb: CallbackQuery, state: FSMContext):
 @router.message(CreateRec.ask_title)
 async def rec_ask_desc(message: Message, state: FSMContext):
     if message.chat.type != "private":
-        return  # FSM тільки для приватного чату
+        return
 
     await state.update_data(title=message.text.strip())
     await message.answer("Короткий опис:")
@@ -51,7 +55,7 @@ async def rec_ask_desc(message: Message, state: FSMContext):
 @router.message(CreateRec.ask_desc)
 async def rec_save(message: Message, state: FSMContext):
     if message.chat.type != "private":
-        return  # FSM тільки для приватного чату
+        return
 
     data = await state.get_data()
     type_ = data["rec_type"]
@@ -60,7 +64,7 @@ async def rec_save(message: Message, state: FSMContext):
 
     async with async_session() as db:
         await upsert_user(db, message.from_user.id, message.from_user.username, message.from_user.first_name)
-        rec = await add_recommendation(db, message.from_user.id, message.from_user.username, type_, title, desc)
+        await add_recommendation(db, message.from_user.id, message.from_user.username, type_, title, desc)
 
     await message.answer(
         f"✅ Додано!\n\n[{type_.upper()}] {title}\n👤 @{message.from_user.username}\n\n{desc}\n\n"
@@ -69,26 +73,21 @@ async def rec_save(message: Message, state: FSMContext):
     await state.clear()
 
 
-from aiogram import Router, F
-from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
-from app.db import async_session
-from app.repositories import list_recommendations
+# =========================
+#     ПЕРЕГЛЯД РЕКОМЕНДАЦІЙ
+# =========================
 
-router = Router()
-
-# --- показати вибір категорії
 @router.message(F.text == "/get_recs")
 async def choose_rec_category(message: Message):
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="🎬 Фільми", callback_data="recs:movie")],
+        [InlineKeyboardButton(text="🎬 Фільми",  callback_data="recs:movie")],
         [InlineKeyboardButton(text="📺 Серіали", callback_data="recs:series")],
-        [InlineKeyboardButton(text="📚 Книги", callback_data="recs:book")],
-        [InlineKeyboardButton(text="🎮 Ігри", callback_data="recs:game")],
+        [InlineKeyboardButton(text="📚 Книги",   callback_data="recs:book")],
+        [InlineKeyboardButton(text="🎮 Ігри",    callback_data="recs:game")],
     ])
     await message.answer("Оберіть категорію рекомендацій:", reply_markup=kb)
 
 
-# --- показати список рекомендацій по обраній категорії
 @router.callback_query(F.data.startswith("recs:"))
 async def list_recs_by_category(cb: CallbackQuery):
     type_ = cb.data.split(":")[1]
@@ -100,10 +99,13 @@ async def list_recs_by_category(cb: CallbackQuery):
 
     if not items:
         await cb.message.edit_text(f"Поки що немає рекомендацій у цій категорії {icon}.")
+        await cb.answer()
         return
 
     text = f"Останні рекомендації ({icon}):\n\n"
     for r in items:
-        text += f"• <b>{r.title}</b>\n  👤 @{r.username or 'anon'}\n  💬 {r.description}\n\n"
+        uname = f"@{r.username}" if r.username else "анон"
+        text += f"• <b>{r.title}</b>\n  👤 {uname}\n  💬 {r.description}\n\n"
 
     await cb.message.edit_text(text, parse_mode="HTML")
+    await cb.answer()
