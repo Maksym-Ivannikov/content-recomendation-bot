@@ -9,7 +9,7 @@ load_dotenv()
 class Settings:
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
     DATABASE_URL: str = os.getenv("POSTGRES_URL", "")
-    GROUP_CHAT_ID: int = int(os.getenv("GROUP_CHAT_ID", "0"))
+    GROUP_CHAT_ID: str = os.getenv("GROUP_CHAT_ID", "")
 
     # Список юзернеймів адмінів (через кому)
     ADMIN_USERNAMES: list[str] = field(
