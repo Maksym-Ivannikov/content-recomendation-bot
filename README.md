@@ -8,7 +8,7 @@
 BOT_TOKEN=...
 POSTGRES_URL=postgresql+asyncpg://user:pass@host:5432/dbname
 GROUP_CHAT_ID=-1001234567890
-ADMIN_USERNAMES=maximivannikov,sofia_writer
+ADMIN_IDS=12323431
 TIMEZONE=Europe/Bucharest
 
 ## Run
