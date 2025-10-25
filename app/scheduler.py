@@ -39,6 +39,6 @@ def setup_scheduler(bot):
             await local_bot.session.close()
 
     # Запускаємо по п’ятницях о 20:00 (Europe/Bucharest)
-    scheduler.add_job(weekly_digest, "cron", day_of_week="sat", hour=12, minute=30)
+    scheduler.add_job(weekly_digest, "cron", day_of_week="sat", hour=13, minute=00)
     scheduler.start()
     return scheduler
